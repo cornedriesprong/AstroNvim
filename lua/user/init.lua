@@ -56,6 +56,10 @@ local config = {
       diagnostics_enabled = true, -- enable diagnostics at start
       status_diagnostics_enabled = true, -- enable diagnostics in statusline
       icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
+      gruvbox_flat_style = "hard", -- enable hard mode for gruvbox
+      vimwiki_list = {{path = '~/notes', syntax = 'markdown', ext = '.md'}},
+      calendar_monday = 1,
+      calendar_weeknm = 5,
     },
   },
   -- If you need more control, you can use the function()...end notation
@@ -137,6 +141,9 @@ local config = {
   lsp = {
     -- enable servers that you already have installed without mason
     servers = {
+        "eslint",
+        "tsserver",
+        "rust_analyzer"
       -- "pyright"
     },
     formatting = {
@@ -206,6 +213,9 @@ local config = {
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+      ["<C-c>"] = { ":Calendar<CR>", desc = "Show calendar"},
+      ["<C-y>"] = { ":VimwikiDiaryPrevDay<CR>", desc = "Diary previous day"},
+      ["<C-n>"] = { ":VimwikiDiaryNextDay<CR>", desc = "Diary next day"},
     },
     t = {
       -- setting a mapping to false will disable it
